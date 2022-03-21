@@ -5,9 +5,9 @@
         <label for="username">Username</label>
         <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel">
         <div class="alert-danger" *ngIf="username.errors && f.submitted">
-          <div *ngIf="username.errors.required">Username es requerido</div>
-          <div *ngIf="username.errors.minlength">Mínimo 3 carácteres</div>
-          <div *ngIf="username.errors.maxlength">No puede ser mayor a 20 carácteres</div>
+          <div *ngIf="username.errors">Username es requerido</div>
+          <div *ngIf="username.errors">Mínimo 3 carácteres</div>
+          <div *ngIf="username.errors">No puede ser mayor a 20 carácteres</div>
         </div>
       </div>
 
@@ -15,8 +15,8 @@
         <label for="email">Email</label>
         <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel">
         <div class="alert-danger" *ngIf="email.errors && f.submitted">
-          <div *ngIf="email.errors.required">Es necesario un email</div>
-          <div *ngIf="email.errors.email">Debe de indicar un email válido</div>
+          <div *ngIf="email.errors">Es necesario un email</div>
+          <div *ngIf="email.errors">Debe de indicar un email válido</div>
         </div>
       </div>
 
@@ -24,8 +24,8 @@
         <label for="password">Contraseña</label>
         <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel">
         <div class="alert-danger" *ngIf="password.errors && f.submitted">
-          <div *ngIf="password.errors.required">Es necesario un email</div>
-          <div *ngIf="password.errors.minlength">Contraseña de mínimo 6 carácteres</div>
+          <div *ngIf="password.errors">Es necesario un email</div>
+          <div *ngIf="password.errors">Contraseña de mínimo 6 carácteres</div>
         </div>
       </div>
 
@@ -38,7 +38,7 @@
 
       </div>
     </form>
-      <div class="alert alert-warning" *ngIf="f.submitted && esSatisfactorio">
+      <div class="alert alert-warning" *ngIf="form.submitted && esSatisfactorio">
         Ingreso exitoso!<br/> {{ errorMessage }}
       </div>
   </div>
