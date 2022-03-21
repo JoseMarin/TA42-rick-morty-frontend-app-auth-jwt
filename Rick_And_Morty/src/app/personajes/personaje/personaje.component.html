@@ -1,0 +1,45 @@
+<main>
+  <div>
+    <p>Personaje</p>
+    <img src="{{ personajes.image }}" alt="">
+    <div *ngIf="personajes.id" class="edit-form" id="edit">
+
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" [(ngModel)]="personajes.name" name="nombre">
+        </div>
+        <div class="form-group">
+          <label for="estado">Estado</label>{{ personajes.status ? "Dead" : "Alive" }} <!--DEBIDO A QUE EL EL ESTADO DEL PERSONAJE SE ACTUALIZA CON MÉTODO PROPIO ES EL ÚNICO QUE NO HACE USO DEL ngModel-->
+        </div>
+        <div class="form-group">
+          <label for="especie">Especie</label>
+          <input type="text" class="form-control" id="especie" [(ngModel)]="personajes.species" name="especie">
+        </div>
+        <div class="form-group">
+          <label for="genero">Género</label>
+          <input type="text" class="form-control" id="genero" [(ngModel)]="personajes.gender" name="genero">
+        </div>
+        <div class="form-group">
+          <label for="origen">Origen</label>
+          <input type="text" class="form-control" id="origen" [(ngModel)]="personajes.origin" name="origen">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Locación</label>
+          <input type="text" class="form-control" id="locacion" [(ngModel)]="personajes.location" name="locacion">
+        </div>
+      </form>
+
+      <button class="badge badge-primary mr-2" *ngIf="personajes.status" (click)="actualizaEstado('Dead')">Muerto</button>
+      <button class="badge badge-primary mr-2" *ngIf="!personajes.status" (click)="actualizaEstado('Alive')">Vivo</button>
+      <button class="badge badge-danger mr-2" (click)="eliminaRegistro()">Borrar</button>
+      <button type="submit" class="badge badge-success mb-2" (click)="actualizaPersonaje()">Actualiza</button>
+        <p>{{ mensaje }}</p>
+
+      <div *ngIf="!personajes.id">
+        <br/>
+        <p>No se puede acceder al registro</p>
+      </div>
+    </div>
+  </div>
+</main>

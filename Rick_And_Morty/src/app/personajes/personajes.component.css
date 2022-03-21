@@ -1,0 +1,43 @@
+body{
+  margin: auto 0px;
+}
+main {
+  padding: 5%;
+}
+
+#title {
+  text-align: center;
+  font-family: 'Courier New';
+  font-size: 45px;
+  background-color: blueviolet;
+  margin-bottom: 50px;
+}
+
+#cartas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+#conten {
+  margin-right: 15px;
+  width: 400px;
+  height: 530px;
+  padding-bottom: 50px;
+  background-color: rgb(34, 33, 33);
+}
+
+span  {
+  color: rgb(136, 129, 143);
+  font-size: 20px;
+}
+
+#boton  {
+  margin: 20px;
+  width: 75%;
+}
+
+li {
+  color: antiquewhite;
+}

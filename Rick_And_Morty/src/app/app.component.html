@@ -1,0 +1,20 @@
+<!--INDEXACIÓN DEL ROUTING PARA CARGAR LOS COMPONENTES HIJO-->
+
+<main>
+<!--INSERCIÓN DE UNA NAV DE BOOTSTRAP-->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="#" routerLink="/personajes">Personajes</a><!--DIRECCIONA CON EL ENDPOINT AL COMPONENTE PERSONAJES-->
+      <a class="navbar-brand" href="#" routerLink="/bio">Sobre Nosotros</a>
+      <a class="navbar-brand" href="#" routerLink="/formulario">Agregar Personajes</a><!--ROUTING AL NUEVO COMPONENTE DE FORMULARIO-->
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </nav>
+
+
+    <router-outlet></router-outlet><!--LO IMPRESCINDIBLE ES EL INCRUSTAMIENTOS DE LA ETIQUETA ROUTER-OUTLET PARA QUE HAGA EL LLAMADO A ESOS ENDPOINTS-->
+</main>

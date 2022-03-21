@@ -1,0 +1,32 @@
+body{
+  margin: auto 0px;
+}
+
+main{
+  background-color: bisque;
+  margin: 10%;
+  align-items: center;
+  border-radius: 25px;
+  padding-bottom: 50px;
+}
+
+.title  {
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Courier New';
+  padding-top: 50px;
+}
+
+#content  {
+  text-align: center;
+  font-family: 'Courier New';
+  margin-top: 150px;
+}
+
+footer  {
+  margin-top: 30%;
+  background-color: aquamarine;
+  text-align: center;
+  font-family: 'Courier New';
+
+}

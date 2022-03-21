@@ -1,0 +1,74 @@
+{
+  "personajes": [
+    {
+      "id": 1,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "origin": "Earth",
+      "location": "Earth",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Morty Smith",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "origin": "Citadel of Ricks",
+      "location": "Earth",
+      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Summer Smith",
+      "status": "Alive",
+      "species": "Alien",
+      "gender": "Female",
+      "origin": "Earth (Replacement Dimension)",
+      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      "location": "City of Ricks"
+    },
+    {
+      "id": 5,
+      "name": "Maggie Simpson",
+      "status": "Dead",
+      "species": "Human",
+      "gender": "female",
+      "origin": "Earth (Replacement Dimension)",
+      "location": "City of Ricks",
+      "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
+    },
+    {
+      "id": "183",
+      "name": "Johnny Deep",
+      "staus": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "origin": "Fake Earth",
+      "location": "",
+      "image": "https://rickandmortyapi.com/api/character/avatar/183.jpeg"
+    },
+    {
+      "id": "514",
+      "name": "Public Opinion Judg",
+      "staus": "Alive",
+      "species": "Human",
+      "gender": "Female",
+      "origin": "Earth (Replacement Dimension)",
+      "location": "",
+      "image": "https://rickandmortyapi.com/api/character/avatar/183.jpeg"
+    },
+    {
+      "id": "514",
+      "name": "Public Opinion Judge",
+      "staus": "Alive",
+      "species": "Human",
+      "gender": "Female",
+      "origin": "Earth (Replacement Dimension)",
+      "location": "",
+      "image" : "https://rickandmortyapi.com/api/character/avatar/514.jpeg"
+    }
+  ]
+}

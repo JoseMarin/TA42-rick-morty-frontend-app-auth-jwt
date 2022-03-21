@@ -1,0 +1,22 @@
+
+<main>
+  <p id="title"><b>Listado de Personajes de Rick and Morty</b> </p>
+  <!--DIRECTIVA NG-->
+  <div id="cartas"  *ngIf="personajes != null; else error" >
+    <div id="conten" class="card" *ngFor="let item of personajes">
+      <img class="card-img-top" src= {{item.image}} alt="rick" >
+      <div class="card-body">
+        <ul>
+          <li class="card-text"><span>Número : </span> {{item.id}}</li>
+          <li class="card-text"><span>Nombre : </span> {{item.name}}</li>
+          <li class="card-text"><span>Estado : </span> {{item.status}}</li>
+          <li class="card-text"><span>Especie : </span> {{item.species}}</li>
+          <li class="card-text"><span>Género : </span> {{item.gender}}</li>
+        </ul>
+        <!--INSERCIÓN DEL ENRUTADOR AL COMPONENTE PERSONAJE MEDIANTE EL EVENTO DEL BOTON, TOMANDO SU ID Y PASANDOSELO AL SERVICE PARA OBTENER RESPUESTA ESPECÍFICA-->
+        <a [routerLink]="['/personajes' , item.id]" class="btn btn-danger">Ver más</a><!--EL ROUTERLINK TOMA COMO PARÁMETRO EL PATH DE PERSONAJES Y LO COMPONE JUNTO AL ATRIBUTO CLAVE QUE LE INDIQUEMOS MEDIANTE LA INTERPOLACIÓN-->
+      </div>
+    </div>
+  </div>
+  <ng-template #error>Error de datos</ng-template> <!--RETORNA EL ELSE CON EL 'ng-template' y la etiqueta que le definicmos en el else-->
+</main>

@@ -1,0 +1,53 @@
+<main>
+  <!--INSERCIÓN DE UNA NAV DE BOOTSTRAP-->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-brand" href="#" routerLink="/busqueda">Búsqueda Personajes</a><!--DIRECCIONA CON EL ENDPOINT AL COMPONENTE PERSONAJES-->
+        <a class="navbar-brand" href="#" routerLink="/formulario">Agregar Personajes</a><!--ROUTING AL NUEVO COMPONENTE DE FORMULARIO-->
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <p>Personaje</p>
+    <div class="submit-form" id="submit">
+      <div *ngIf="!submitted"> <!--CONDICIONAL ANIDADO PARA SABER SI SE AGREGA O NO UN NIEVO VALOR-->
+          <div class="mb-3 mt-3">
+            <label for="name" class="form-label">id : </label>
+            <input type="text" class="form-control" id="id" placeholder="id" required [(ngModel)] = "personajes.id" >
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="name" class="form-label">Nombre : </label>
+            <input type="text" class="form-control" id="name" placeholder="Nombre" required [(ngModel)] = "personajes.name" >
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="name" class="form-label">Estado : </label>
+            <input type="text" class="form-control" id="name" placeholder="Estado" required [(ngModel)] = "personajes.status">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="name" class="form-label">Especie : </label>
+            <input type="text" class="form-control" id="name" placeholder="Especie" required [(ngModel)] = "personajes.species">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="name" class="form-label">Género : </label>
+            <input type="text" class="form-control" id="name" placeholder="Género" required [(ngModel)] = "personajes.gender">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="name" class="form-label">Origen : </label>
+            <input type="text" class="form-control" id="name" placeholder="Origen" required [(ngModel)] = "personajes.origin">
+          </div>
+
+          <button (click)="guardaPersonaje()" class="btn btn-danger" type="button" >Subir</button>
+
+      </div>
+        <!--CONDICIONAL DERIVADO DEL ANTERIOR IF-->
+        <div *ngIf="submitted">
+          <p>Personaje Agregado con Exito</p>
+          <button class="btn btn-danger" (click)="guardaPersonaje()">Agrega</button>
+        </div>
+    </div>
+
+  </main>

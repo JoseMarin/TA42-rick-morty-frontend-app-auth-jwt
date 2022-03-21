@@ -1,0 +1,69 @@
+<main>
+  <!--INSERCIÓN DE UNA NAV DE BOOTSTRAP-->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-brand" href="#" routerLink="/busqueda">Búsqueda Personajes</a><!--DIRECCIONA CON EL ENDPOINT AL COMPONENTE PERSONAJES-->
+        <a class="navbar-brand" href="#" routerLink="/formulario">Agregar Personajes</a><!--ROUTING AL NUEVO COMPONENTE DE FORMULARIO-->
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+    </nav>
+        <p>Búsqueda de personajes</p>
+  <div class="list row">
+        <div class="box">
+          <div class="container">
+            <span class="icon"><i class="fa fa-search"></i> </span>
+            <input type="search" id="busqueda" placeholder="Búsqueda por nombre" [(ngModel)]="name" />
+            <button class="btn btn-danger" type="button" (click)="buscaNombre()">Search</button>
+          </div>
+        </div>
+
+        <div class="col-md-6" id="left">
+          <h3>Personaje detalle</h3>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let person of personajes; let i = index" [class.active] = "i == personajeIndex" (click) = "setPersonajeActivo(person, i)">
+              {{ person.name }}
+
+            </li>
+          </ul>
+
+          <button class="m-3 btn-sm btn-danger" (click)="eliminaTodosPersonajes()">Eliminar todo</button>
+        </div>
+
+        <div class="col-md-6" id="right">
+          <div *ngIf="personajeActual.id"> <!--LLAMADO AL OBJETO POR ID ESPECÍFICA-->
+            <h3>Personaje</h3>
+            <div>
+              <label><b>Nombre : </b></label> {{personajeActual.name}}<!--RETORNO DE CADA VALOR POR ESA UBICACIÓN-->
+            </div>
+            <div>
+              <label><b>Estado : </b></label> {{personajeActual.status ? "dead" : "alive"}}<!--RETORNO DE CADA VALOR POR ESA UBICACIÓN-->
+            </div>
+            <div>
+              <label><b>Especie : </b></label> {{personajeActual.species}}<!--RETORNO DE CADA VALOR POR ESA UBICACIÓN-->
+            </div>
+            <div>
+              <label><b>Género : </b></label> {{personajeActual.gender}}<!--RETORNO DE CADA VALOR POR ESA UBICACIÓN-->
+            </div>
+            <div>
+              <label><b>Origen : </b></label> {{personajeActual.origin}}<!--RETORNO DE CADA VALOR POR ESA UBICACIÓN-->
+            </div>
+           <!-- <div>
+              <img src="{{personajeActual.img}}" alt="personaje"> RETORNO DE CADA VALOR POR ESA UBICACIÓN
+            </div>-->
+
+            <a class="badge badge-warning" routerLink="/personajes/{{ personajeActual.id }}">Editar</a>
+          </div>
+
+          <div *ngIf="!personajeActual">
+            <br/>
+            <p>Escoja un personaje</p>
+          </div>
+        </div>
+
+
+  </div>
+</main>
