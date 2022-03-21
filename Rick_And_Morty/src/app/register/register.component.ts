@@ -34,8 +34,8 @@ export class RegisterComponent implements OnInit {
         this.esSatisfactorio = true;
         this.esFallido = false;
       },
-      error => {
-        this.errorMessage = error.error.errorMessage;
+      err => {
+        this.errorMessage = err.error.errorMessage;
         this.esFallido = true;
       }
       );
