@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   esSatisfactorio = false;
   esFallido = false;
-  erroMessage = '';
+  errorMessage = '';
   roles : string[] = [];
 
   constructor(private authService : AuthService, private tokenStorage : TokenStorageService) { }
@@ -28,6 +28,29 @@ export class LoginComponent implements OnInit {
       this.esSatisfactorio = true;
       this.roles = this.tokenStorage.ubicaUser().roles;
     }
+  }
+
+  onSubmit() : void {
+    const { username, password } = this.form;
+
+    this.authService.login(username, password)
+      .subscribe( data => {
+        this.tokenStorage.guardaToken(data.accessToken);
+        this.tokenStorage.guardaUser(data);
+
+        this.esFallido = false;
+        this.esSatisfactorio = true;
+        this.roles = this.tokenStorage.ubicaUser().roles;
+        this.reloadPage();
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.esFallido = true;
+      }
+      );
+  }
+  reloadPage() : void {
+    window.location.reload();
   }
 
 }
